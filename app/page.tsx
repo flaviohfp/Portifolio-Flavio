@@ -7,85 +7,141 @@ const notionUrl =
 const clientProjects = [
   {
     name: "Unity Laser",
-    type: "Site comercial em produção",
+    type: "Site comercial em producao",
     url: "https://unity-laser.vercel.app",
+    preview: "unity",
     summary:
-      "Vitrine digital para empresa de brindes personalizados, gravação a laser e orçamentos corporativos.",
+      "Vitrine digital para empresa de brindes personalizados, gravacao a laser e orcamentos corporativos.",
     stack: ["React", "Firebase", "Vercel", "SEO", "Responsivo"],
     impact: [
-      "Página publicada e acessível para clientes reais.",
-      "Estrutura voltada para apresentação de serviços, confiança e geração de orçamento.",
-      "Configuração de segurança, performance e deploy em produção.",
+      "Pagina publicada e acessivel para clientes reais.",
+      "Estrutura voltada para apresentacao de servicos, confianca e geracao de orcamento.",
+      "Configuracao de seguranca, performance e deploy em producao.",
     ],
   },
   {
     name: "Dispemaq",
     type: "E-commerce e painel administrativo",
     url: "https://dispemaq-fe9ef.web.app/admin.html",
+    preview: "dispemaq",
     summary:
-      "Loja com área administrativa para gerenciar produtos, clientes, pedidos, banners, avaliações e logística.",
+      "Loja com area administrativa para gerenciar produtos, clientes, pedidos, banners, avaliacoes e logistica.",
     stack: ["JavaScript", "Firebase", "Firestore", "Storage", "Melhor Envio"],
     impact: [
-      "Painel com abas para visão geral, pedidos, clientes, produtos, site e banners.",
-      "Fluxo de cadastro de produtos com imagens, preço, logística, peso e dimensões.",
-      "Integração de frete com Melhor Envio e estrutura para operação de vendas.",
+      "Painel com abas para visao geral, pedidos, clientes, produtos, site e banners.",
+      "Fluxo de cadastro de produtos com imagens, preco, logistica, peso e dimensoes.",
+      "Integracao de frete com Melhor Envio e estrutura para operacao de vendas.",
     ],
   },
 ];
 
 const skills = [
-  "HTML semântico",
+  "HTML semantico",
   "CSS responsivo",
   "JavaScript",
   "React",
   "Firebase",
   "Firestore",
-  "Autenticação",
+  "Autenticacao",
   "Deploy",
   "Git e GitHub",
   "Consumo de APIs",
-  "Noções de UX",
-  "Manutenção de sistemas",
+  "Nocoes de UX",
+  "Manutencao de sistemas",
 ];
 
 const senaiLearning = [
   {
-    title: "Lógica e base de programação",
-    text: "Construção de raciocínio, algoritmos, variáveis, condicionais, repetição e organização de soluções.",
+    title: "Logica e base de programacao",
+    text: "Construcao de raciocinio, algoritmos, variaveis, condicionais, repeticao e organizacao de solucoes.",
   },
   {
     title: "Desenvolvimento web",
-    text: "Criação de interfaces responsivas com HTML, CSS e JavaScript, sempre pensando em usabilidade.",
+    text: "Criacao de interfaces responsivas com HTML, CSS e JavaScript, sempre pensando em usabilidade.",
   },
   {
-    title: "Projetos e documentação",
-    text: "Registro de estudos no Notion, versionamento no GitHub e evolução contínua por entregas práticas.",
+    title: "Projetos e documentacao",
+    text: "Registro de estudos no Notion, versionamento no GitHub e evolucao continua por entregas praticas.",
   },
   {
-    title: "Banco de dados e integração",
-    text: "Aprendizado aplicado em cadastros, autenticação, leitura e gravação de dados para sistemas reais.",
+    title: "Banco de dados e integracao",
+    text: "Aprendizado aplicado em cadastros, autenticacao, leitura e gravacao de dados para sistemas reais.",
   },
 ];
 
 const strengths = [
-  "Já colocou projetos reais no ar para clientes, lidando com entrega, ajustes e responsabilidade.",
-  "Aprende rápido e transforma estudo em produto, com foco em resolver problema de negócio.",
-  "Tem experiência prática com loja, painel administrativo, Firebase, deploy e integração de serviço externo.",
-  "Busca vaga júnior com postura de evolução, organização e vontade de contribuir desde o primeiro mês.",
+  "Ja colocou projetos reais no ar para clientes, lidando com entrega, ajustes e responsabilidade.",
+  "Aprende rapido e transforma estudo em produto, com foco em resolver problema de negocio.",
+  "Tem experiencia pratica com loja, painel administrativo, Firebase, deploy e integracao de servico externo.",
+  "Busca vaga junior com postura de evolucao, organizacao e vontade de contribuir desde o primeiro mes.",
 ];
 
 export const metadata: Metadata = {
-  title: "Flávio Henrique | Portfólio Desenvolvedor Júnior",
+  title: "Flavio Henrique Pradela | Portfolio Desenvolvedor Junior",
   description:
-    "Portfólio pessoal de Flávio Henrique com projetos reais, estudos no SENAI, sites para clientes e foco em desenvolvimento web.",
+    "Portfolio pessoal de Flavio Henrique Pradela com projetos reais, estudos no SENAI, sites para clientes e foco em desenvolvimento web.",
 };
+
+function ProjectPreview({ kind, name }: { kind: string; name: string }) {
+  return (
+    <div className={`site-preview site-preview--${kind}`} aria-label={`Preview visual do projeto ${name}`}>
+      <div className="browser-bar">
+        <span />
+        <span />
+        <span />
+        <small>{name}</small>
+      </div>
+      {kind === "unity" ? (
+        <div className="preview-screen unity-screen">
+          <div className="preview-nav">
+            <strong>Unity Laser</strong>
+            <em>Orcamento</em>
+          </div>
+          <div className="preview-hero">
+            <span>Brindes personalizados</span>
+            <h4>Gravacao a laser para empresas</h4>
+            <p>Produtos corporativos, personalizacao e contato comercial.</p>
+          </div>
+          <div className="preview-products">
+            <i />
+            <i />
+            <i />
+          </div>
+        </div>
+      ) : (
+        <div className="preview-screen dispemaq-screen">
+          <div className="preview-nav">
+            <strong>Dispemaq</strong>
+            <em>Painel</em>
+          </div>
+          <div className="dashboard-row">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="dashboard-table">
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="dashboard-actions">
+            <b />
+            <b />
+          </div>
+        </div>
+      )}
+      <div className="open-overlay">Clique para abrir o site real</div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <main>
       <section className="hero" id="inicio">
-        <nav className="topbar" aria-label="Navegação principal">
-          <a className="brand" href="#inicio" aria-label="Início">
+        <nav className="topbar" aria-label="Navegacao principal">
+          <a className="brand" href="#inicio" aria-label="Inicio">
             FH
           </a>
           <div className="navlinks">
@@ -98,13 +154,13 @@ export default function Home() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">Desenvolvedor em formação | Web | Sistemas</span>
-            <h1>Flávio Henrique</h1>
+            <span className="eyebrow">Desenvolvedor em formacao | Web | Sistemas</span>
+            <h1>Flavio Henrique Pradela</h1>
             <p className="lead">
-              Desenvolvedor júnior em evolução, com projetos reais publicados,
-              experiência prática em sites para clientes e formação contínua pelo
-              SENAI. Quero entrar na IXC para crescer com time, código de
-              produção e problemas reais.
+              Desenvolvedor junior em evolucao, com projetos reais publicados,
+              experiencia pratica em sites para clientes e formacao continua pelo
+              SENAI. Quero entrar na IXC para crescer com time, codigo de
+              producao e problemas reais.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#projetos">
@@ -120,13 +176,15 @@ export default function Home() {
           </div>
 
           <aside className="profile-panel" aria-label="Resumo profissional">
-            <div className="avatar">FH</div>
+            <div className="photo-frame">
+              <img src="/flavio-henrique.jpg" alt="Foto de Flavio Henrique Pradela" />
+            </div>
             <div>
               <span className="panel-kicker">Objetivo atual</span>
-              <h2>Vaga de Programador Júnior na IXC</h2>
+              <h2>Programador Junior na IXC</h2>
               <p>
-                Perfil prático, com base técnica em construção de interfaces,
-                sistemas administrativos, dados em nuvem e deploy.
+                Sou Flavio Henrique Pradela, perfil pratico, com base tecnica em
+                interfaces, sistemas administrativos, dados em nuvem e deploy.
               </p>
             </div>
             <div className="metrics">
@@ -153,11 +211,11 @@ export default function Home() {
           <h2>Eu construo, publico, aprendo e melhoro.</h2>
         </div>
         <p>
-          Meu diferencial é já ter sentido a pressão boa de entregar sistemas
+          Meu diferencial e ja ter sentido a pressao boa de entregar sistemas
           para uso real: site que precisa abrir no celular, painel que precisa
-          organizar produto, cliente e pedido, integração que precisa funcionar
-          sem confundir quem usa. Ainda estou no começo da carreira, mas já
-          tenho repertório de prática e vontade de evoluir com qualidade.
+          organizar produto, cliente e pedido, integracao que precisa funcionar
+          sem confundir quem usa. Ainda estou no comeco da carreira, mas ja
+          tenho repertorio de pratica e vontade de evoluir com qualidade.
         </p>
       </section>
 
@@ -167,18 +225,18 @@ export default function Home() {
           <h2>Sites e sistemas feitos para clientes</h2>
           <p>
             Trabalhos com objetivo comercial, publicados para empresas reais e
-            usados como vitrine, gestão ou apoio de vendas.
+            usados como vitrine, gestao ou apoio de vendas. Clique em qualquer
+            card para abrir o projeto funcionando.
           </p>
         </div>
 
         <div className="projects-grid">
           {clientProjects.map((project) => (
-            <article className="project-card" key={project.name}>
+            <a className="project-card" href={project.url} target="_blank" rel="noreferrer" key={project.name}>
+              <ProjectPreview kind={project.preview} name={project.name} />
               <div className="project-head">
                 <span>{project.type}</span>
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  Abrir site
-                </a>
+                <strong>Abrir site</strong>
               </div>
               <h3>{project.name}</h3>
               <p>{project.summary}</p>
@@ -192,7 +250,7 @@ export default function Home() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
+            </a>
           ))}
         </div>
       </section>
@@ -200,9 +258,9 @@ export default function Home() {
       <section className="section split" id="senai">
         <div className="section-heading">
           <span className="eyebrow">SENAI</span>
-          <h2>O que já aprendi e continuo aprendendo</h2>
+          <h2>O que ja aprendi e continuo aprendendo</h2>
           <p>
-            Minha formação está sendo conectada com projetos práticos: cada
+            Minha formacao esta sendo conectada com projetos praticos: cada
             conceito estudado vira tela, regra, cadastro, deploy ou melhoria.
           </p>
           <a className="inline-link" href={notionUrl} target="_blank" rel="noreferrer">
@@ -221,8 +279,8 @@ export default function Home() {
 
       <section className="section" id="skills">
         <div className="section-heading">
-          <span className="eyebrow">Stack e competências</span>
-          <h2>Ferramentas que já uso na prática</h2>
+          <span className="eyebrow">Stack e competencias</span>
+          <h2>Ferramentas que ja uso na pratica</h2>
         </div>
         <div className="skills-cloud">
           {skills.map((skill) => (
@@ -233,8 +291,8 @@ export default function Home() {
 
       <section className="section proof">
         <div className="section-heading">
-          <span className="eyebrow">Por que eu para júnior?</span>
-          <h2>Base técnica, fome de aprender e entrega real</h2>
+          <span className="eyebrow">Por que eu para junior?</span>
+          <h2>Base tecnica, vontade de aprender e entrega real</h2>
         </div>
         <div className="proof-grid">
           {strengths.map((item, index) => (
@@ -248,24 +306,24 @@ export default function Home() {
 
       <section className="section timeline">
         <div className="section-heading">
-          <span className="eyebrow">Evolução</span>
-          <h2>Minha trajetória até aqui</h2>
+          <span className="eyebrow">Evolucao</span>
+          <h2>Minha trajetoria ate aqui</h2>
         </div>
         <div className="timeline-list">
           <article>
             <span>Estudo</span>
             <h3>Fundamentos no SENAI</h3>
-            <p>Construindo base de programação, web, documentação e boas práticas.</p>
+            <p>Construindo base de programacao, web, documentacao e boas praticas.</p>
           </article>
           <article>
-            <span>Prática</span>
+            <span>Pratica</span>
             <h3>Primeiros projetos de cliente</h3>
-            <p>Desenvolvendo páginas e sistemas que precisam funcionar fora do ambiente de estudo.</p>
+            <p>Desenvolvendo paginas e sistemas que precisam funcionar fora do ambiente de estudo.</p>
           </article>
           <article>
-            <span>Próximo passo</span>
+            <span>Proximo passo</span>
             <h3>Entrada em time de desenvolvimento</h3>
-            <p>Busco uma oportunidade júnior para aprender com revisão, rotina, produto e código de produção.</p>
+            <p>Busco uma oportunidade junior para aprender com revisao, rotina, produto e codigo de producao.</p>
           </article>
         </div>
       </section>
@@ -275,8 +333,8 @@ export default function Home() {
           <span className="eyebrow">Contato</span>
           <h2>Vamos conversar sobre a vaga?</h2>
           <p>
-            Este portfólio reúne minha prática real e minha evolução. Estou
-            pronto para aprender com o time, contribuir com dedicação e crescer
+            Este portfolio reune minha pratica real e minha evolucao. Estou
+            pronto para aprender com o time, contribuir com dedicacao e crescer
             como programador.
           </p>
         </div>
