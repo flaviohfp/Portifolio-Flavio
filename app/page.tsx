@@ -46,8 +46,12 @@ const skills = [
   "Deploy",
   "Git e GitHub",
   "Consumo de APIs",
-  "Nocoes de UX",
-  "Manutencao de sistemas",
+  "ChatGPT",
+  "Codex",
+  "Claude",
+  "Atendimento ao cliente",
+  "Levantamento de requisitos",
+  "Melhoria de processos",
 ];
 
 const senaiLearning = [
@@ -69,17 +73,17 @@ const senaiLearning = [
   },
 ];
 
-const personalHighlights = [
-  "Sou tradicionalista ha 13 anos e a cultura gaucha faz parte da minha identidade.",
-  "Dou aula de chula em CTGs de Chapeco e regiao, o que me ensinou disciplina, responsabilidade e comunicacao.",
-  "Sempre gostei de aprender coisas novas, principalmente quando o assunto envolve computadores, sites e softwares.",
-  "Na programacao, encontrei uma area em que consigo juntar curiosidade, criatividade e vontade de construir algo util.",
+const processHighlights = [
+  "Converso com clientes para entender o que eles precisam antes de pensar em tela ou codigo.",
+  "Transformo ideias soltas em tarefas, telas, melhorias e solucoes mais claras para o negocio.",
+  "Uso IA como apoio no estudo, na criacao, na revisao de codigo e na organizacao de caminhos possiveis.",
+  "Mesmo em nivel iniciante, ja participo do processo inteiro: conversa, ideia, desenvolvimento, teste, ajuste e publicacao.",
 ];
 
 export const metadata: Metadata = {
   title: "Flavio Henrique Furlanetto Pradela | Portfolio",
   description:
-    "Portfolio pessoal de Flavio Henrique Furlanetto Pradela com historia, tradicionalismo, tecnologia, estudos no SENAI e projetos desenvolvidos.",
+    "Portfolio de desenvolvedor de Flavio Henrique Furlanetto Pradela com estudos, projetos, IA, atendimento a clientes e resolucao de problemas.",
 };
 
 function ProjectPreview({ kind, name }: { kind: string; name: string }) {
@@ -146,7 +150,7 @@ export default function Home() {
           </a>
           <div className="navlinks">
             <a href="#sobre">Sobre</a>
-            <a href="#tradicao">Tradicao</a>
+            <a href="#processo">Processo</a>
             <a href="#projetos">Projetos</a>
             <a href="#senai">SENAI</a>
             <a href="#contato">Contato</a>
@@ -155,14 +159,15 @@ export default function Home() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">Portfolio pessoal | Tecnologia | Tradicionalismo</span>
+            <span className="eyebrow">Desenvolvimento web | IA | Solucoes para clientes</span>
             <h1>Flavio Henrique Furlanetto Pradela</h1>
             <p className="lead">
-              Nasci em 5 de janeiro de 2009, em uma vida muito ligada a cultura
-              gaucha, ao aprendizado e a tecnologia. Hoje estudo Desenvolvimento
-              de Sistemas no SENAI, dou aula de chula em CTGs de Chapeco e
-              regiao, e sigo criando projetos que mostram um pouco do que eu
-              gosto de fazer e do que venho aprendendo.
+              Sou estudante de Desenvolvimento de Sistemas no SENAI e venho
+              construindo minha caminhada na programacao com projetos reais,
+              contato com clientes e muita vontade de resolver problemas. Hoje
+              nao fico apenas no codigo: eu tambem converso, organizo ideias,
+              penso em melhorias, testo caminhos e uso IA como apoio para
+              aprender e entregar melhor.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#sobre">
@@ -186,21 +191,21 @@ export default function Home() {
             </div>
             <div>
               <span className="panel-kicker">Quem sou eu</span>
-              <h2>Estudante, tradicionalista e apaixonado por tecnologia</h2>
+              <h2>Desenvolvedor em formacao com visao de projeto completo</h2>
               <p>
-                Este portfolio e um espaco para reunir minha historia, meus
-                estudos, meus projetos e as experiencias que fazem parte da
-                pessoa que estou me tornando.
+                Este portfolio reune o que venho aprendendo e construindo:
+                sites, sistemas, atendimento a clientes, organizacao de ideias e
+                solucoes que ajudam empresas no dia a dia.
               </p>
             </div>
             <div className="metrics">
               <span>
                 <strong>2009</strong>
-                ano em que nasci
+                nascimento
               </span>
               <span>
-                <strong>13 anos</strong>
-                tradicionalista
+                <strong>2+</strong>
+                projetos reais
               </span>
               <span>
                 <strong>SENAI</strong>
@@ -214,7 +219,7 @@ export default function Home() {
       <section className="section intro" id="sobre">
         <div>
           <span className="eyebrow">Sobre mim</span>
-          <h2>Eu gosto de aprender, criar e estar sempre em movimento.</h2>
+          <h2>Meu interesse por tecnologia virou pratica.</h2>
         </div>
         <p>
           Desde pequeno sempre tive curiosidade por computadores, sites,
@@ -222,22 +227,28 @@ export default function Home() {
           contato de verdade com programacao, percebi que era uma area em que eu
           conseguia aprender, testar, errar, melhorar e ver as ideias tomando
           forma. Isso me motivou a entrar no curso tecnico de Desenvolvimento de
-          Sistemas do SENAI, que termino este ano.
+          Sistemas do SENAI, que termino este ano. Com o tempo, comecei a ir
+          alem das aulas: passei a participar de projetos reais, conversar com
+          clientes e entender que desenvolver tambem e saber ouvir, organizar e
+          transformar necessidades em solucoes.
         </p>
       </section>
 
-      <section className="section proof" id="tradicao">
+      <section className="section proof" id="processo">
         <div className="section-heading">
-          <span className="eyebrow">Tradicao e vida pessoal</span>
-          <h2>A chula e o tradicionalismo tambem contam minha historia</h2>
+          <span className="eyebrow">Como eu trabalho hoje</span>
+          <h2>Estou aprendendo a cuidar do processo inteiro</h2>
           <p>
-            Antes mesmo da programacao, o tradicionalismo ja fazia parte da
-            minha rotina. Sou tradicionalista ha 13 anos e hoje tambem sou
-            professor de chula em CTGs de Chapeco e regiao.
+            Ainda estou no inicio, mas nos projetos que aparecem eu acabo
+            assumindo varias partes: conversar com o cliente, entender a dor,
+            propor melhoria, desenvolver, testar, ajustar e colocar no ar.
+            Uso ferramentas de IA como ChatGPT, Codex e Claude para acelerar
+            estudo, explorar solucoes e revisar ideias, mas a parte humana do
+            processo continua sendo minha.
           </p>
         </div>
         <div className="proof-grid">
-          {personalHighlights.map((item, index) => (
+          {processHighlights.map((item, index) => (
             <article key={item}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{item}</p>
@@ -252,9 +263,10 @@ export default function Home() {
           <h2>Alguns trabalhos que ja desenvolvi ou participei</h2>
           <p>
             Aqui estao alguns projetos que fazem parte da minha caminhada. Eles
-            representam pratica real, estudo, tentativa, melhoria e contato com
-            problemas que aparecem quando um site precisa ser usado por outras
-            pessoas. Clique nos cards para abrir os projetos.
+            representam pratica real: conversar com cliente, entender o que a
+            empresa precisa, pensar em melhorias, desenvolver telas, organizar
+            informacoes e publicar algo que outras pessoas realmente usam.
+            Clique nos cards para abrir os projetos.
           </p>
         </div>
 
@@ -313,7 +325,9 @@ export default function Home() {
           <h2>Ferramentas e assuntos que venho estudando</h2>
           <p>
             Ainda estou evoluindo, mas essas sao algumas tecnologias e praticas
-            que ja aparecem nos meus estudos e projetos.
+            que ja aparecem nos meus estudos e projetos. Tambem uso IA no meu
+            fluxo de trabalho, principalmente para estudar, comparar solucoes,
+            revisar codigo e transformar ideias em tarefas mais claras.
           </p>
         </div>
         <div className="skills-cloud">
@@ -330,19 +344,19 @@ export default function Home() {
         </div>
         <div className="timeline-list">
           <article>
-            <span>Desde cedo</span>
-            <h3>Tradicionalismo e chula</h3>
-            <p>A cultura gaucha sempre esteve presente na minha vida e me ensinou constancia, respeito e dedicacao.</p>
-          </article>
-          <article>
-            <span>Tecnologia</span>
+            <span>Base</span>
             <h3>Curiosidade por computadores</h3>
-            <p>Sempre gostei de entender como sites e softwares funcionam, e isso acabou me aproximando da programacao.</p>
+            <p>Sempre gostei de entender como sites e softwares funcionam, e essa curiosidade acabou me aproximando da programacao.</p>
           </article>
           <article>
-            <span>Hoje</span>
-            <h3>SENAI e projetos reais</h3>
-            <p>Estou finalizando o curso tecnico e colocando em pratica o que aprendo em projetos web e sistemas.</p>
+            <span>Formacao</span>
+            <h3>SENAI e desenvolvimento de sistemas</h3>
+            <p>No curso tecnico, comecei a construir uma base mais organizada em logica, web, banco de dados e projetos.</p>
+          </article>
+          <article>
+            <span>Pratica</span>
+            <h3>Projetos, clientes e IA</h3>
+            <p>Hoje aplico o que aprendo em projetos reais, conversando com clientes e usando IA como ferramenta de apoio no processo.</p>
           </article>
         </div>
       </section>
@@ -352,10 +366,11 @@ export default function Home() {
           <span className="eyebrow">Contato</span>
           <h2>Este e meu espaco para mostrar o que venho construindo.</h2>
           <p>
-            Meu objetivo com este portfolio e reunir minha historia, meus
-            estudos, meus projetos e um pouco da minha personalidade. Conforme
-            eu aprender mais e participar de novos projetos, este site tambem
-            vai evoluir junto comigo.
+            Meu objetivo com este portfolio e reunir minha evolucao como
+            desenvolvedor: os estudos, os projetos, as conversas com clientes,
+            as decisoes de produto e as solucoes que vou criando. Conforme eu
+            aprender mais e participar de novos projetos, este site tambem vai
+            evoluir junto comigo.
           </p>
         </div>
         <div className="contact-actions">

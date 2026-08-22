@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Flavio Henrique Furlanetto Pradela | Portfolio",
   description:
-    "Portfolio pessoal de Flavio Henrique Furlanetto Pradela com historia, tecnologia, tradicionalismo, estudos e projetos desenvolvidos.",
+    "Portfolio de desenvolvedor de Flavio Henrique Furlanetto Pradela, com estudos, projetos, atendimento a clientes, IA e resolucao de problemas.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
