@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Flavio Henrique Pradela | Portfolio Desenvolvedor Junior",
+  title: "Flavio Henrique Furlanetto Pradela | Portfolio",
   description:
-    "Projetos reais, estudos no SENAI e trajetoria de Flavio Henrique Pradela como desenvolvedor web em busca de vaga junior.",
+    "Portfolio pessoal de Flavio Henrique Furlanetto Pradela com historia, tecnologia, tradicionalismo, estudos e projetos desenvolvidos.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
