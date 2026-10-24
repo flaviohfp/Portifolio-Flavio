@@ -256,6 +256,11 @@ export default function Home() {
                         <li key={t}>{t}</li>
                       ))}
                     </ul>
+                    {p.repo && (
+                      <a className="project__link" href={p.repo} target="_blank" rel="noreferrer" data-track={`institucional_${p.id}`}>
+                        Ver código no GitHub <Arrow />
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}

@@ -1093,6 +1093,7 @@ ol {
 
 .inst-card__features {
   display: grid;
+  align-content: start;
   gap: 8px;
   margin: 18px 0 22px;
   flex: 1;

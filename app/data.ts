@@ -126,6 +126,7 @@ export type InstitutionalProject = {
   event: string;
   award?: string;
   image?: string;
+  repo?: string;
   summary: string;
   features: string[];
   stack: string[];
@@ -173,12 +174,17 @@ export const institutionalProjects: InstitutionalProject[] = [
   },
   {
     id: "saep",
-    name: "Simulação SAEP",
-    event: "SENAI · avaliação prática",
+    name: "Sistema para Clínica Veterinária",
+    event: "SAEP 2026 · prova prática SENAI",
+    repo: "https://github.com/flaviohfp/Flavio_Henrique_SAEP",
     summary:
-      "Sistema de cadastro de usuários e gestão de tarefas com back-end próprio e banco relacional, feito para o simulado do SAEP.",
-    features: ["CRUD completo de usuários e tarefas", "API em Node.js com Express", "Persistência em PostgreSQL"],
-    stack: ["Node.js", "Express", "PostgreSQL", "JavaScript"],
+      "Desenvolvido na prova do SAEP em 3 horas e sem internet: cadastro de tutores e pets e agendamento de consultas para uma clínica que ainda controlava tudo no papel.",
+    features: [
+      "Login com senha criptografada (bcrypt) e sessão que expira em 15 min",
+      "CPF dos tutores criptografado no banco, seguindo a LGPD",
+      "Banco relacional modelado com DER e requisitos documentados",
+    ],
+    stack: ["Node.js", "Express", "PostgreSQL", "Bootstrap", "JavaScript"],
   },
 ];
 
