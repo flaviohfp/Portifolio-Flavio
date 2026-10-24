@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Formulario de contato do portfolio: qualquer visitante pode enviar,
+    // ninguem pode ler, editar ou apagar pelo site (leia pelo console do Firebase).
+    match /contatos/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'contact', 'type', 'message', 'page', 'createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() > 1 && request.resource.data.name.size() <= 80
+        && request.resource.data.contact is string && request.resource.data.contact.size() > 4 && request.resource.data.contact.size() <= 120
+        && request.resource.data.type is string && request.resource.data.type.size() <= 40
+        && request.resource.data.message is string && request.resource.data.message.size() > 9 && request.resource.data.message.size() <= 2000
+        && request.resource.data.page is string && request.resource.data.page.size() <= 300
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

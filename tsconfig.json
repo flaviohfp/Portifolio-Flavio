@@ -38,11 +38,7 @@
   ],
   "exclude": [
     "node_modules",
-    "db",
-    "drizzle",
-    "examples",
-    "worker",
-    "vite.config.ts",
-    "drizzle.config.ts"
+    "out",
+    "dist"
   ]
 }

@@ -38,3 +38,9 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+*.tsbuildinfo
