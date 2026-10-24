@@ -255,17 +255,6 @@ ol {
   border: 1px solid rgba(184, 255, 94, 0.25);
 }
 
-.badge--build {
-  color: var(--amber);
-  background: rgba(255, 181, 71, 0.08);
-  border: 1px solid rgba(255, 181, 71, 0.25);
-}
-
-.badge--build .pulse-dot {
-  background: var(--amber);
-  box-shadow: 0 0 10px var(--amber);
-}
-
 .caret {
   display: inline-block;
   width: 0.55em;
@@ -1024,18 +1013,17 @@ ol {
   border-color: var(--accent);
 }
 
-/* ───────── lab ───────── */
-.lab {
+/* ───────── institucionais ───────── */
+.inst {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  margin-bottom: 56px;
 }
 
-.lab-card {
-  position: relative;
+.inst-card {
   display: flex;
   flex-direction: column;
-  padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1045,72 +1033,91 @@ ol {
     transform 0.3s;
 }
 
-.lab-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--amber), transparent);
-  opacity: 0.6;
-}
-
-.lab-card:hover {
-  border-color: rgba(255, 181, 71, 0.35);
+.inst-card:hover {
+  border-color: rgba(94, 242, 255, 0.35);
   transform: translateY(-4px);
 }
 
-.lab-card__top {
+.inst-card__media {
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.inst-card__media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s;
+}
+
+.inst-card:hover .inst-card__media img {
+  transform: scale(1.03);
+}
+
+.inst-card__body {
   display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.inst-card__top {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  color: var(--dim);
+  color: var(--cyan);
   font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.lab-card h3 {
-  margin-top: 24px;
-  font-size: 24px;
+.badge--award {
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.1);
+  border: 1px solid rgba(255, 209, 102, 0.3);
 }
 
-.lab-card > p {
+.inst-card h3 {
+  margin-top: 16px;
+  font-size: 26px;
+}
+
+.inst-card__body > p {
   margin-top: 12px;
-  flex: 1;
   color: var(--muted);
   font-size: 15px;
 }
 
-.progress {
-  height: 6px;
-  margin-top: 24px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
+.inst-card__features {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 22px;
+  flex: 1;
 }
 
-.progress span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--amber), #ff7a59);
-  box-shadow: 0 0 12px var(--amber);
+.inst-card__features li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-.progress__label {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 0 18px;
-  color: var(--amber);
-  font-size: 12px;
-}
-
-.progress__label span {
-  color: var(--dim);
+.inst-card__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 9px;
+  height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
 }
 
 /* terminal */
 .terminal {
-  margin-top: 64px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: #070a10;
@@ -1520,9 +1527,6 @@ ol {
   .hud--b {
     right: -6%;
   }
-  .lab {
-    grid-template-columns: 1fr 1fr;
-  }
   .pipeline {
     grid-template-columns: 1fr 1fr;
   }
@@ -1660,7 +1664,7 @@ ol {
 }
 
 @media (max-width: 600px) {
-  .lab,
+  .inst,
   .pipeline {
     grid-template-columns: 1fr;
   }

@@ -7,7 +7,7 @@ import {
   archive,
   emailAddress,
   githubUrl,
-  labProjects,
+  institutionalProjects,
   linkedinUrl,
   liveProjects,
   notionUrl,
@@ -110,12 +110,12 @@ export default function Home() {
                 <dd>{pad(liveProjects.length)}</dd>
               </div>
               <div>
-                <dt>Em desenvolvimento</dt>
-                <dd>{pad(labProjects.length)}</dd>
+                <dt>Projetos institucionais</dt>
+                <dd>{pad(institutionalProjects.length)}</dd>
               </div>
               <div>
-                <dt>Repositórios</dt>
-                <dd>20+</dd>
+                <dt>Hackased · IXC</dt>
+                <dd>2º lugar</dd>
               </div>
               <div>
                 <dt>Técnico SENAI</dt>
@@ -141,7 +141,7 @@ export default function Home() {
           <div className="wrap">
             <header className="section-head" data-reveal>
               <p className="kicker mono">
-                <span>01</span> Em produção
+                <span>01</span> Projetos profissionais
               </p>
               <h2>
                 Sites reais, <em>clientes reais.</em>
@@ -215,41 +215,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ───────── LAB ───────── */}
-        <section className="section section--alt" id="lab">
+        {/* ───────── INSTITUCIONAIS ───────── */}
+        <section className="section section--alt" id="institucionais">
           <div className="wrap">
             <header className="section-head" data-reveal>
               <p className="kicker mono">
-                <span>02</span> Em construção
+                <span>02</span> Projetos institucionais
               </p>
               <h2>
-                No laboratório <em>agora.</em>
+                Competições e <em>desafios reais.</em>
               </h2>
-              <p>Projetos que estou desenvolvendo neste momento — de IoT com ESP32 a protótipos com IA.</p>
+              <p>
+                Projetos feitos em hackathons, desafios propostos por empresas e avaliações do curso técnico no
+                SENAI.
+              </p>
             </header>
 
-            <div className="lab">
-              {labProjects.map((p) => (
-                <article className="lab-card" key={p.name} data-reveal>
-                  <div className="lab-card__top mono">
-                    <span className="badge badge--build">
-                      <span className="pulse-dot" /> Building
-                    </span>
-                    <span>{p.tag}</span>
+            <div className="inst">
+              {institutionalProjects.map((p) => (
+                <article className={`inst-card ${p.image ? "inst-card--media" : ""}`} key={p.id} data-reveal>
+                  {p.image && (
+                    <div className="inst-card__media">
+                      <Image src={p.image} alt={`Tela do projeto ${p.name}`} width={1440} height={900} />
+                    </div>
+                  )}
+                  <div className="inst-card__body">
+                    <div className="inst-card__top mono">
+                      <span>{p.event}</span>
+                      {p.award && <span className="badge badge--award">🏆 {p.award}</span>}
+                    </div>
+                    <h3>{p.name}</h3>
+                    <p>{p.summary}</p>
+                    <ul className="inst-card__features">
+                      {p.features.map((f) => (
+                        <li key={f}>{f}</li>
+                      ))}
+                    </ul>
+                    <ul className="tags">
+                      {p.stack.map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3>{p.name}</h3>
-                  <p>{p.summary}</p>
-                  <div className="progress" role="img" aria-label={`Progresso estimado: ${p.progress}%`}>
-                    <span style={{ width: `${p.progress}%` }} />
-                  </div>
-                  <p className="progress__label mono">
-                    <span>progresso</span> {p.progress}%
-                  </p>
-                  <ul className="tags">
-                    {p.stack.map((t) => (
-                      <li key={t}>{t}</li>
-                    ))}
-                  </ul>
                 </article>
               ))}
             </div>
@@ -263,7 +270,7 @@ export default function Home() {
               </div>
               <div className="terminal__body mono">
                 <p className="terminal__cmd">
-                  <span className="prompt">flavio@senai</span>:<span className="path">~/estudos</span>$ ls --projetos-academicos
+                  <span className="prompt">flavio@senai</span>:<span className="path">~/estudos</span>$ ls --outros-trabalhos
                 </p>
                 <ul>
                   {archive.map((a) => (

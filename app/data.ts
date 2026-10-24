@@ -100,25 +100,6 @@ export const liveProjects: LiveProject[] = [
     accent: "#c86bd8",
   },
   {
-    id: "itamara-vicente",
-    name: "Itamara Vicente Perfumes",
-    client: "Itamara Vicente · Revenda de perfumes",
-    segment: "Catálogo digital + pedidos via WhatsApp",
-    url: "https://itamaravicente-27683.web.app",
-    domain: "itamaravicente-27683.web.app",
-    image: "/projects/itamara-vicente.jpg",
-    summary:
-      "Catálogo de fragrâncias com busca e filtros por família olfativa; a cliente monta a lista e envia o pedido pronto pelo WhatsApp.",
-    features: [
-      "Busca, filtros e lista de pedido enviada pelo WhatsApp",
-      "Painel admin com login para produtos, fotos e vídeos",
-      "Backup da base em JSON (exportar e importar)",
-      "Upload de mídia no Firebase Storage",
-    ],
-    stack: ["JavaScript", "Firestore", "Storage", "Firebase Auth", "Vercel"],
-    accent: "#f0a58a",
-  },
-  {
     id: "maria-hoffmann",
     name: "Maria Hoffmann",
     client: "Maria Hoffmann · Social media",
@@ -139,44 +120,69 @@ export const liveProjects: LiveProject[] = [
   },
 ];
 
-export type LabProject = {
+export type InstitutionalProject = {
+  id: string;
   name: string;
-  tag: string;
+  event: string;
+  award?: string;
+  image?: string;
   summary: string;
+  features: string[];
   stack: string[];
-  progress: number;
 };
 
-// Projetos em andamento.
-export const labProjects: LabProject[] = [
+// Competições, desafios de empresas e projetos do SENAI.
+export const institutionalProjects: InstitutionalProject[] = [
   {
+    id: "hackased",
+    name: "Central de Atendimento Multicanal",
+    event: "Hackased · desafio IXC",
+    award: "2º lugar",
+    image: "/projects/hackased.jpg",
+    summary:
+      "Desafiados por jurados da IXC a resolver um problema antigo da empresa, criamos uma central que reúne WhatsApp, Instagram, Facebook e Telegram em um único painel de atendimento.",
+    features: [
+      "Perfis de atendente e gestor",
+      "Conversas de todos os canais em um só lugar",
+      "Histórico com filtros e estatísticas por canal",
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+  },
+  {
+    id: "grand-prix",
     name: "Vale Smart Route",
-    tag: "Grand Prix SENAI",
+    event: "Grand Prix SENAI · desafio Vale",
+    image: "/projects/grand-prix.jpg",
     summary:
-      "Protótipo de roteirização inteligente em tempo real para operações industriais, com mapa simulado, painéis por cargo (admin, despacho, operação, manutenção) e IA.",
+      "Sistema de roteirização inteligente em tempo real para operações industriais da Vale, com acesso por cargo e mapa de simulação da frota.",
+    features: [
+      "Painéis para despacho, operação e manutenção",
+      "Simulação de rotas e chamados no mapa",
+      "Autenticação e dados em tempo real com Firebase",
+    ],
     stack: ["React", "TypeScript", "Firebase", "Gemini", "shadcn/ui"],
-    progress: 70,
   },
   {
+    id: "estacionamento",
     name: "Estacionamento Inteligente",
-    tag: "IoT · ESP32",
+    event: "SENAI · IoT com ESP32",
     summary:
-      "Painel web servido pela própria ESP32 que mostra em tempo real a ocupação das vagas, lida por sensores ultrassônicos HC-SR04.",
-    stack: ["C++", "ESP32", "HTML", "JavaScript", "API REST"],
-    progress: 80,
+      "Painel web servido pela própria ESP32 que mostra em tempo real se cada vaga está livre ou ocupada, a partir de sensores ultrassônicos.",
+    features: ["Leitura de sensores HC-SR04", "API REST na ESP32", "Painel atualizado em tempo real"],
+    stack: ["C++", "ESP32", "HTML", "JavaScript"],
   },
   {
-    name: "Cleyson Vitor · Gaiteiro",
-    tag: "Site para músico",
+    id: "saep",
+    name: "Simulação SAEP",
+    event: "SENAI · avaliação prática",
     summary:
-      "Site de apresentação e consulta de agenda para um gaiteiro, com painel admin e Cloud Functions para receber pedidos de shows.",
-    stack: ["JavaScript", "Firebase", "Cloud Functions"],
-    progress: 45,
+      "Sistema de cadastro de usuários e gestão de tarefas com back-end próprio e banco relacional, feito para o simulado do SAEP.",
+    features: ["CRUD completo de usuários e tarefas", "API em Node.js com Express", "Persistência em PostgreSQL"],
+    stack: ["Node.js", "Express", "PostgreSQL", "JavaScript"],
   },
 ];
 
 export const archive = [
-  { name: "simulacao-saep", desc: "CRUD de usuários e tarefas", stack: "Node · Express · PostgreSQL" },
   { name: "easyroom", desc: "App de reservas de hotel (em trio)", stack: "Java · UX/UI" },
   { name: "crise-de-1929", desc: "Site escolar com quiz e carrossel", stack: "HTML · CSS · JS" },
   { name: "guia-de-sobrevivencia", desc: "Guia de monstros de jogos (em grupo)", stack: "HTML · CSS · JS" },
